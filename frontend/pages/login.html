@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FoodBridge</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            background: var(--cream);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 15px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 460px;
+            background: white;
+            padding: 42px;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(23,76,53,0.09);
+        }
+
+        .login-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            background: #e0f0e3;
+            color: var(--primary);
+            border-radius: 18px;
+            font-size: 30px;
+        }
+
+        .login-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .form-label {
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .form-control {
+            padding: 13px;
+            border-radius: 9px;
+            border: 1px solid #dce5dd;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(112,183,126,0.15);
+        }
+
+        .login-submit {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+        }
+
+        .login-submit:hover {
+            background: var(--secondary);
+        }
+
+        .login-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .back-home {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media(max-width: 576px) {
+            .login-card {
+                padding: 28px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <i class="bi bi-leaf-fill"></i> FoodBridge
+        </a>
+        <a href="../index.html" class="back-home">
+            <i class="bi bi-arrow-left"></i> Home
+        </a>
+    </div>
+</nav>
+
+<main class="login-wrapper">
+    <div class="login-card">
+
+        <div class="text-center">
+            <div class="login-icon">
+                <i class="bi bi-person-heart"></i>
+            </div>
+
+            <h2>Welcome Back!</h2>
+            <p class="text-muted mt-2">
+                Login to continue making a difference.
+            </p>
+        </div>
+
+        <div id="message" class="mt-3" aria-live="polite"></div>
+
+        <form id="loginForm" class="mt-4">
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                    autocomplete="email">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                    autocomplete="current-password">
+            </div>
+
+            <button type="submit" class="login-submit" id="loginButton">
+                Login <i class="bi bi-arrow-right"></i>
+            </button>
+
+        </form>
+
+        <p class="text-center mt-4 mb-0">
+            Don't have an account?
+            <a href="register.html" class="fw-bold text-decoration-none" style="color: var(--primary);">
+                Register Now
+            </a>
+        </p>
+
+        <p class="text-center mt-4 mb-0">
+            <small class="text-muted">
+                Your account must be approved before login.
+            </small>
+        </p>
+
+    </div>
+</main>
+
+<footer class="footer text-center">
+    <div class="container">
+        <p class="mb-0">
+            © <span id="currentYear"></span> FoodBridge. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<script src="../js/login.js"></script>
+
+</body>
+</html>
